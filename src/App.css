@@ -301,9 +301,9 @@ body {
 
 }
 
-.sort-button:hover {
+/* .sort-button:hover {
   background-color: #45a049;
-}
+} */
 
 
 
@@ -890,6 +890,9 @@ body {
   font-size: 26px;
 }
 
+.menu-icon{
+  display: none;
+}
 
 /* CSS for mobile devices */
 @media only screen and (max-width: 470px) {
@@ -935,5 +938,154 @@ body {
 
   .search-container {
     margin: 70px auto 0px;
+  }
+}
+
+@media only screen and (max-width: 731px) {
+  .menu-icon {
+    display: inline-block;
+    font-size: 25px;
+  }
+
+  .shimmer-item {
+    margin-right: 0;
+  }
+
+  .nav-list.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px #00000076;
+    border-radius: 10px;
+    z-index: 10;
+    padding: 10px;
+  }
+
+  .filter {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 10px;
+  }
+
+  .nav-items ul {
+    display: none;
+  }
+
+  .logout-container {
+    display: none;
+  }
+  
+  .sort-button{
+    margin-top: 10px;
+    margin-right: 24%;
+  }
+
+  .sec1 .sec2 {
+    flex-direction: column;
+  }
+
+  .main-footer {
+    width: 95%;
+    justify-content: space-around;
+    margin: 0 auto;
+    gap: 17px;
+  }
+
+  .Food-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Food-card a {
+    margin-right: 0;
+    padding: 0 10px;
+  }
+
+  .Food-item {
+    width: 90% !important;
+    margin-right: 0 !important;
+    margin-left: 15px;
+  }
+
+  .item-info p {
+    max-height: 55px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .menu-info span {
+    font-size: 14px;
+  }
+
+  .menu-price-constainer {
+    font-size: 14px;
+  }
+
+  .About-container h1 {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .acordian {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .empty-cart p {
+    padding: 0px 25px;
+    text-align: center;
+  }
+
+  .cart {
+    margin: 0 10px;
+  }
+
+  .footer {
+    width: 100% !important;
+  }
+
+  .foot5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icons {
+    justify-content: center !important;
+  }
+
+  .copyright {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 1097px) {
+  .search {
+    min-width: 250px;
+  }
+
+  .filter {
+    white-space: nowrap;
+    height: 45px;
+    overflow: scroll;
+    justify-content: flex-start;
+    padding: 0 25px;
+  }
+
+  .food-menu-title {
+    text-align: center;
+  }
+
+  .Food-card {
+    justify-content: center;
+  }
+
+  .no-results-found {
+    margin: 60px;
   }
 }

@@ -11,6 +11,8 @@ import { useSelector } from "react-redux";
 const Header = () => {
     const [btnName, setBtnName] = useState("Login");
     const onlineStatus = useOnline();
+    const [showNavItems, setShowNavItems] = useState(false);
+
 
     const { logggedInUser } = useContext(UserContext)
 
@@ -21,13 +23,22 @@ const Header = () => {
         0
     );
 
+    const toggleNavItems = () => {
+        setShowNavItems(!showNavItems);
+      };
+
     return (
         <div className='header'>
             <div className='logo-container'>
                 <img className='logo' src={NEW_LOGO_1} alt="logo" />
             </div>
             <div className='nav-items'>
-                <ul>
+                <div className="menu-icon" onClick={toggleNavItems}>
+                    <span>
+                        <i className="fa-solid fa-bars"></i>
+                    </span>
+                </div>
+                <ul className={`nav-list ${showNavItems ? "show" : ""}`}>
                     <li>
                         <Link to="/" className="dropdown-item">
                             <span style={{ padding: "7px" }}>
@@ -70,7 +81,8 @@ const Header = () => {
                     </li> */}
                 </ul>
             </div>
-            <div className="logout-container" onClick={() => { btnName === "Login" ? (setBtnName("Logout"), toast.success("User Logged In")) : (setBtnName("Login"), toast.success("User Logged Out"));
+            <div className="logout-container" onClick={() => {
+                btnName === "Login" ? (setBtnName("Logout"), toast.success("User Logged In")) : (setBtnName("Login"), toast.success("User Logged Out"));
             }}>
                 <div className="h-online">
                     Online: {onlineStatus ? "🟢" : "🔴"}
